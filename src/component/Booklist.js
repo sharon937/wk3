@@ -1,20 +1,64 @@
 import React from "react";
-import { FlatList, Text} from "react-native";
-import Bookdetail from "./Bookdetail";
+import { FlatList, Text, SectionList, StyleSheet} from "react-native";
+import Populardetail from "./Populardetail"
+import Newestdetail from "./Newestdetail";
+import sections from "../json/book_section.json";
 
-const Booklist = ({list}) => {
-    const renderItem = ({item}) =><Bookdetail book={item} />;
-  return (
-    <>
-        <Text style={ {fontSize:24,marginLeft:20,letterSpacing:0.3,fontWeight:"bold"}}>Popular Books</Text>
-        <FlatList
-            horizontal={true}
-            data={list}
-            renderItem={renderItem}
-            keyExtractor={item => item.title}
+const Booklist = () => {
+    const renderSectionHeader = ({section}) =>(
+        <>
+            <Text style={styles.textStyle}>{section.title}</Text>
+            {section.starexist ? (
+                <FlatList
+                horizontal={true}
+                data={section.data}
+                renderItem={({ item }) => <Populardetail book={item} />}
+                showsHorizontalScrollIndicator={false}
+                keyExtractor={ item => item.title }
+                />
+            ) : (
+                <FlatList
+                horizontal={true}
+                data={section.data}
+                renderItem={({ item }) => <Newestdetail book={item} />}
+                showsHorizontalScrollIndicator={false}
+                keyExtractor={ item => item.title }
+                />
+                )}
+        </>
+    );
+    const renderItem = ({ item, section }) => {
+        if (section.starexist)  return null;
+        return null;
+      };
+    
+      return (
+        <SectionList 
+          sections={sections}
+          contentContainerStyle={{ paddingHorizontal: 10 }}
+          stickySectionHeadersEnabled={false}
+          showsHorizontalScrollIndicator={false}
+          renderSectionHeader={renderSectionHeader}
+          renderItem={renderItem}
+          keyExtractor={ item => item.title }
+          style={styles.bookStyle}
         />
-    </>
-  );
+      );
+  
 };
+
+const styles = StyleSheet.create({
+    textStyle: {
+        fontSize:24,
+        marginLeft:12,
+        marginTop:8,
+        letterSpacing:0.3,
+        fontWeight:"bold"
+    },
+    bookStyle: {
+        marginLeft:12,
+        marginRight:12
+    }
+  });
 
 export default Booklist;

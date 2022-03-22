@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Image} from "react-native";
 
-const Bookdetail = props => {
+const Newestdetail = props => {
    let { book } = props;
    return (
       <View style={styles.cardContainerStyle}>
@@ -40,4 +40,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Bookdetail;
+export default Newestdetail;
