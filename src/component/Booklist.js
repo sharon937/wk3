@@ -4,7 +4,7 @@ import Populardetail from "./Populardetail"
 import Newestdetail from "./Newestdetail";
 import sections from "../json/book_section.json";
 
-const Booklist = () => {
+const Booklist = ({navigation}) => {
     const renderSectionHeader = ({section}) =>(
         <>
             <Text style={styles.textStyle}>{section.title}</Text>
@@ -12,7 +12,7 @@ const Booklist = () => {
                 <FlatList
                 horizontal={true}
                 data={section.data}
-                renderItem={({ item }) => <Populardetail book={item} />}
+                renderItem={({ item }) => <Populardetail book={item} navigation={navigation} />}
                 showsHorizontalScrollIndicator={false}
                 keyExtractor={ item => item.title }
                 />
@@ -20,7 +20,7 @@ const Booklist = () => {
                 <FlatList
                 horizontal={true}
                 data={section.data}
-                renderItem={({ item }) => <Newestdetail book={item} />}
+                renderItem={({ item }) => <Newestdetail book={item} navigation={navigation}/>}
                 showsHorizontalScrollIndicator={false}
                 keyExtractor={ item => item.title }
                 />

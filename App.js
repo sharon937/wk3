@@ -1,13 +1,13 @@
-
 import React from "react";
-import { SafeAreaView, StatusBar } from "react-native";
-import BookList from "./src/component/Booklist";
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import Navigation from "./src/navigation";
 const App = () => {
   return (
-    <SafeAreaView>
-      <StatusBar />
-      <BookList />
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <SafeAreaView style={{flex: 1}}>
+        <Navigation />            
+      </SafeAreaView>  
+    </SafeAreaProvider>
   );
 };
 
