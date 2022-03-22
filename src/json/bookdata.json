@@ -1,0 +1,21 @@
+{
+    "booklisttitle":"popularbook",
+    "booklist":[
+        {
+            "title":"Fashionopolis",
+            "author":"Dana Thomas",
+            "image":"https://raw.githubusercontent.com/sharon937/img/main/img_book_fashinopolis.png"
+        },
+        {
+            "title":"Chanel",
+            "author":"Patrick Mauriès ",
+            "image":"https://raw.githubusercontent.com/sharon937/img/main/img_book_chanel.png"
+        },
+        {
+            "title":"Calligraphy",
+            "author":"June & Lucy ",
+            "image":"https://raw.githubusercontent.com/sharon937/img/main/img_book_calligraphy.png"
+        }
+    ]
+
+}
