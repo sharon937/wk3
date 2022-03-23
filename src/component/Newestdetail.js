@@ -12,6 +12,10 @@ const Newestdetail = props => {
             style={styles.imgStyle}
             source={{uri: book.image}}
           /></Pressable>
+          <Image
+            style={styles.starStyle}
+            source={{uri: book.star}}
+          />
          <Text style={styles.nameStyle}>{book.title}</Text>
           <Text style={styles.authorStyle}>{book.author}</Text>  
       </View>
@@ -22,6 +26,11 @@ const styles = StyleSheet.create({
     height: 200,
     width: 140,
     marginBottom:16
+  },
+  starStyle: {
+    height: 14,
+    width: 86,
+    marginBottom:8.5
   },
   nameStyle: {
     fontSize: 16,
