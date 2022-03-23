@@ -13,7 +13,7 @@ const Navigation = () => {
       <StackNavigator />
     </NavigationContainer>
   );
-}
+};
 
 const StackNavigator = () => {
   return (
@@ -29,6 +29,8 @@ const StackNavigator = () => {
       />
     </Stack.Navigator>
   );
-}
+};
+
+
 
 export default Navigation;

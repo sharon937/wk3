@@ -5,7 +5,7 @@ import Booklist from "../component/Booklist";
 
 const Homescreen = ({ navigation }) => {
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, backgroundColor: '#fff'}}>
         <Booklist navigation={navigation}/>
     </View>
   );
